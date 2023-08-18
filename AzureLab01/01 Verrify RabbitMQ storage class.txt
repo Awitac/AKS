@@ -1,0 +1,28 @@
+Verify the configuration of a StorageClass in Kubernetes
+
+1. Display the details of the StorageClass:
+
+   kubectl get storageclass rabbitmq-storage -o yaml
+
+   This command will retrieve and display the YAML definition of the `rabbitmq-storage` StorageClass. 
+   It will include information about the provisioner, parameters, and other settings.
+
+2. Verify the Reclaim Policy:
+
+   Look for the `reclaimPolicy` field in the displayed YAML. It should show the value `Retain`
+
+For example, the output might look something like this:
+
+```yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: rabbitmq-storage
+provisioner: kubernetes.io/azure-disk
+parameters:
+  storageaccounttype: Standard_LRS
+reclaimPolicy: Retain
+```
+
+Please note that the above commands assume that you have the `kubectl` command-line tool properly configured to interact with your Kubernetes cluster. 
+Make sure you are running these commands in the same context where your StorageClass is defined.
