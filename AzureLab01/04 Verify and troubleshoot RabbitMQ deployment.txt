@@ -1,0 +1,50 @@
+# Check Deployment Status
+kubectl get deployment rabbitmq
+
+# Describe Deployment
+kubectl describe deployment rabbitmq
+
+# Check Pod Status
+kubectl get pods -l app=rabbitmq
+
+# Describe Pods
+kubectl describe pods -l app=rabbitmq
+
+# Check Service Status
+kubectl get service rabbitmq
+
+# Examine Pod Logs (replace <pod-name> with actual pod name)
+kubectl logs <pod-name>
+
+# Access RabbitMQ Management UI
+# Use your browser and navigate to the appropriate URL
+
+# Verify Environment Variables
+# Review RabbitMQ Deployment YAML for environment variables
+
+# Check Storage Provisioning
+kubectl get pv,pvc
+
+# Check for Taints and Tolerations
+# Review node taints and pod tolerations
+
+# Check Network Policies
+# Examine network policies affecting RabbitMQ communication
+
+# Confirm Resource Availability
+kubectl get nodes
+
+# Verify Node Selector and Affinity
+# Review nodeSelector and affinity settings in the Deployment YAML
+
+# Check Kubelet and API Server Health
+# Ensure kubelet and API server are operational
+
+# Cluster Scaling (if needed)
+# Adjust cluster size if resources are constrained
+
+# Verify Service and Deployment Names
+# Ensure names in YAML files match
+
+# Perform Post-Deployment Testing
+# Test sending and receiving messages through RabbitMQ
