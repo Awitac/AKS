@@ -1,0 +1,6 @@
+metadata:
+  name: rabbitmq-storage
+provisioner: kubernetes.io/azure-disk
+parameters:
+  storageaccounttype: Standard_LRS
+reclaimPolicy: Retain
