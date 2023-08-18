@@ -1,0 +1,22 @@
+# Check Deployment Status
+kubectl get deployment postgresql
+
+# Describe Deployment
+kubectl describe deployment postgresql
+
+# Check Pod Status
+kubectl get pods -l app=postgresql
+
+# Describe Pods
+kubectl describe pods -l app=postgresql
+
+# Check Service Status
+kubectl get service postgresql
+
+# Describe Service
+kubectl describe service postgresql
+
+# Connect to PostgreSQL
+# Replace 'admin' with the actual username. You'll be prompted for the password: 'changeme'
+kubectl run -it psql --image=postgres:13 --restart=Never --env PGPASSWORD=changeme -- psql -h postgresql -U admin -d keycloakdb
+
